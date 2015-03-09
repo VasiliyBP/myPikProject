@@ -1,0 +1,354 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/screen.scss */
+body {
+  height: 100%;
+  font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+  font-size: 14px;
+}
+
+/* line 15, ../sass/screen.scss */
+.layout {
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* line 23, ../sass/screen.scss */
+header {
+  height: 72px;
+  margin: 2px 0 10px 0;
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 29, ../sass/screen.scss */
+.header-layout {
+  float: left;
+  margin: 8px 0 0 16px;
+}
+/* line 32, ../sass/screen.scss */
+.header-layout:first-child {
+  margin: 0;
+}
+
+/* line 36, ../sass/screen.scss */
+.logo {
+  font-size: 0;
+}
+
+/* line 39, ../sass/screen.scss */
+.phone {
+  margin-left: 25px;
+}
+/* line 41, ../sass/screen.scss */
+.phone p {
+  color: #F5821F;
+  font: bold 27px/28px "Arial Black",Arial,Helvetica,sans-serif;
+  font-weight: 900;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 48, ../sass/screen.scss */
+.phone span {
+  display: block;
+  color: #EB9431;
+  margin-top: -2px;
+  font: bold 10px Arial,Helvetica,sans-serif;
+  text-align: right;
+}
+
+/* line 58, ../sass/screen.scss */
+.call-me {
+  cursor: pointer;
+  width: 152px;
+  height: 65px;
+  border-right: 3px solid #2B6CB4;
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+/* line 66, ../sass/screen.scss */
+.call-me:hover {
+  border-color: #FA680B;
+}
+/* line 68, ../sass/screen.scss */
+.call-me:hover span {
+  color: #FA680B;
+  text-decoration: underline;
+}
+/* line 72, ../sass/screen.scss */
+.call-me:hover .call-me-ico {
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  transition: 1s all ease;
+  -webkit-transition: 1s all ease;
+}
+/* line 81, ../sass/screen.scss */
+.call-me span {
+  text-decoration: underline;
+  font-family: sans-serif;
+  color: #2B6CB4;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: bold;
+}
+/* line 89, ../sass/screen.scss */
+.call-me a {
+  text-decoration: none;
+}
+
+/* line 95, ../sass/screen.scss */
+.call-me-ico {
+  height: 100%;
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  transition: 1s all ease;
+  -webkit-transition: 1s all ease;
+}
+
+/* line 104, ../sass/screen.scss */
+.call-me-link {
+  display: -moz-inline-box;
+  display: inline-block;
+  width: 80px;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+/* line 111, ../sass/screen.scss */
+.banner {
+  font-size: 0;
+}
+
+/* line 114, ../sass/screen.scss */
+.b-header-language {
+  height: 65px;
+  background: #F9F5F0;
+  float: right;
+}
+/* line 118, ../sass/screen.scss */
+.b-header-language a {
+  display: block;
+  color: #2F2F2F;
+  font: 10px Arial,Helvetica,sans-serif;
+  padding: 4px 10px 4px 4px;
+  text-decoration: none;
+}
+/* line 125, ../sass/screen.scss */
+.b-header-language img {
+  float: left;
+  margin-right: 4px;
+}
+/* line 129, ../sass/screen.scss */
+.b-header-language .selected {
+  color: #ccc !important;
+  cursor: default;
+}
+
+/* line 140, ../sass/screen.scss */
+.b-main-menu {
+  position: relative;
+  background: #286FBF;
+  height: 42px;
+  clear: both;
+  font-size: 0;
+}
+/* line 146, ../sass/screen.scss */
+.b-main-menu > li {
+  display: inline-block;
+  position: relative;
+  height: 26px;
+  padding: 9px 0 7px;
+  vertical-align: top;
+}
+/* line 152, ../sass/screen.scss */
+.b-main-menu > li > a {
+  font: bold 12px Arial,Helvetica,sans-serif;
+  border-right: 0.1em solid #4881C1;
+  display: inline-block;
+  white-space: nowrap;
+  background: none repeat scroll 0 0 transparent;
+  color: #FFFFFF;
+  line-height: 2.1em;
+  min-width: 0;
+  padding: 0 10px;
+  text-align: center;
+}
+
+/* line 166, ../sass/screen.scss */
+.menu-item-selected {
+  background: #FA6A0E;
+}
+/* line 168, ../sass/screen.scss */
+.menu-item-selected > a {
+  border-color: #FD9D5F !important;
+}
+
+/* line 174, ../sass/screen.scss */
+.menu-item-customisation-catalog {
+  width: 178px;
+}
+
+/* line 177, ../sass/screen.scss */
+.menu-item-customisation-catalog .main-menu-item {
+  width: 135px !important;
+}
+
+/* line 180, ../sass/screen.scss */
+.menu-item-customisation-ipoteka {
+  width: 109px;
+}
+
+/* line 183, ../sass/screen.scss */
+.menu-item-customisation-discount {
+  width: 109px;
+}
+
+/* line 186, ../sass/screen.scss */
+.menu-item-customisation-offices {
+  width: 109px;
+}
+
+/* line 189, ../sass/screen.scss */
+.menu-item-customisation-about {
+  width: 107px;
+}
+
+/* line 192, ../sass/screen.scss */
+.menu-item-customisation-shareholders {
+  width: 153px;
+  border-right: none !important;
+}
+
+/* line 196, ../sass/screen.scss */
+.menu-item-customisation-press {
+  width: 108px;
+}
+
+/* line 199, ../sass/screen.scss */
+.menu-item-realty-dropdown > a {
+  padding-right: 31px !important;
+  background: url("../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
+}
+
+/* line 207, ../sass/screen.scss */
+.b-realty-list-breadcrumbs {
+  position: relative;
+  font-size: 13px;
+  padding: 5px 0px 5px 0px;
+  background-color: #F8F8F8;
+}
+/* line 212, ../sass/screen.scss */
+.b-realty-list-breadcrumbs ul {
+  display: block;
+  list-style: none;
+}
+/* line 216, ../sass/screen.scss */
+.b-realty-list-breadcrumbs li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 10px;
+  position: relative;
+}
+/* line 221, ../sass/screen.scss */
+.b-realty-list-breadcrumbs li > a {
+  border-bottom: 1px dashed;
+  text-decoration: none;
+  color: #F9680B;
+}
+
+/* line 229, ../sass/screen.scss */
+.b-breadcrumbs-dropdown-button {
+  background: url("../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
+  border: 0 none !important;
+  cursor: pointer;
+  display: inline-block;
+  height: 4px;
+  margin-left: 3px;
+  position: relative;
+  top: -1px;
+  width: 7px;
+}
+
+/* line 240, ../sass/screen.scss */
+.b-breadcrumbs-separator {
+  color: #B4B4B4;
+  display: inline-block;
+  margin: 0px -10px 0px 6px;
+}

@@ -1,0 +1,244 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/utilities";
+
+body {
+  height: 100%;
+  font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+  font-size: 14px;
+
+}
+.layout {
+  width: 1000px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+//HEADER
+
+header {
+  height: 72px;
+  margin: 2px 0 10px 0;
+  @include pie-clearfix;
+
+}
+.header-layout {
+  float: left;
+  margin: 8px 0 0 16px;
+  &:first-child {
+    margin: 0;
+  }
+}
+.logo {
+  font-size: 0;
+}
+.phone {
+  margin-left: 25px;
+  p {
+    color: #F5821F;
+    font: bold 27px/28px "Arial Black",Arial,Helvetica,sans-serif;
+    font-weight: 900;
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    display: block;
+    color: #EB9431;
+    margin-top: -2px;
+    font: bold 10px Arial,Helvetica,sans-serif;
+    text-align: right;
+  }
+}
+
+
+.call-me {
+  cursor: pointer;
+  width: 152px;
+  height: 65px;
+  border-right: 3px solid #2B6CB4;
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: middle;
+  &:hover {
+    border-color: #FA680B;
+      span {
+        color: #FA680B;
+        text-decoration: underline;
+      }
+      .call-me-ico {
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        transition: 1s all ease;
+        -webkit-transition: 1s all ease;
+      }
+    }
+
+  span {
+     text-decoration: underline;
+     font-family: sans-serif;
+     color: #2B6CB4;
+     font-size: 15px;
+     line-height: 16px;
+     font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.call-me-ico {
+  height: 100%;
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  transition: 1s all ease;
+  -webkit-transition: 1s all ease;
+}
+.call-me-link {
+  display: -moz-inline-box;
+  display: inline-block;
+  width: 80px;
+  vertical-align: middle;
+  zoom: 1;
+}
+.banner {
+  font-size: 0;
+}
+.b-header-language {
+  height: 65px;
+  background: #F9F5F0;
+  float: right;
+  & a {
+      display: block;
+      color: #2F2F2F;
+      font: 10px Arial,Helvetica,sans-serif;
+      padding: 4px 10px 4px 4px;
+      text-decoration: none;
+  }
+  & img {
+    float: left;
+    margin-right: 4px;
+  }
+  & .selected {
+    color: #ccc !important;
+    cursor: default;
+  }
+}
+
+//HEADER-END
+
+
+
+//MENU
+.b-main-menu {
+  position: relative;
+  background: #286FBF;
+  height: 42px;
+  clear: both;
+  font-size: 0;
+  >li {
+      display: inline-block;
+      position: relative;
+      height: 26px;
+      padding: 9px 0 7px;
+      vertical-align: top;
+      >a {
+          font: bold 12px Arial,Helvetica,sans-serif;
+          border-right: 0.1em solid #4881C1;
+          display: inline-block;
+          white-space: nowrap;
+          background: none repeat scroll 0 0 transparent;
+          color: #FFFFFF;
+          line-height: 2.1em;
+          min-width: 0;
+          padding: 0 10px;
+          text-align: center;
+      }
+  }
+}
+.menu-item-selected {
+  background: #FA6A0E;
+  > a {
+
+      border-color: #FD9D5F !important;
+
+  }
+}
+.menu-item-customisation-catalog {
+  width: 178px;
+}
+.menu-item-customisation-catalog .main-menu-item {
+  width: 135px !important;
+}
+.menu-item-customisation-ipoteka {
+  width: 109px;
+}
+.menu-item-customisation-discount {
+  width: 109px;
+}
+.menu-item-customisation-offices {
+  width: 109px;
+}
+.menu-item-customisation-about {
+  width: 107px;
+}
+.menu-item-customisation-shareholders {
+  width: 153px;
+  border-right: none !important;
+}
+.menu-item-customisation-press {
+  width: 108px;
+}
+.menu-item-realty-dropdown > a {
+  padding-right: 31px !important;
+  background: url("../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
+}
+//MENU-END
+
+//BREADSCRUBS
+
+.b-realty-list-breadcrumbs {
+  position: relative;
+  font-size: 13px;
+  padding: 5px 0px 5px 0px;
+  background-color: #F8F8F8;
+  ul {
+    display: block;
+    list-style: none;
+  }
+  li{
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 10px;
+    position: relative;
+    >a {
+      border-bottom: 1px dashed;
+      text-decoration: none;
+      color: #F9680B;
+    }
+  }
+}
+
+.b-breadcrumbs-dropdown-button {
+  background: url("../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
+  border: 0 none !important;
+  cursor: pointer;
+  display: inline-block;
+  height: 4px;
+  margin-left: 3px;
+  position: relative;
+  top: -1px;
+  width: 7px;
+}
+.b-breadcrumbs-separator {
+  color: #B4B4B4;
+  display: inline-block;
+  margin: 0px -10px 0px 6px;
+}
