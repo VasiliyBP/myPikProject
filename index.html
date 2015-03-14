@@ -123,7 +123,9 @@
                     <div class="realty-item" ng-repeat="bulk in bulks" ng-show="{{bulk.minprice > 0}}">
                         <img ng-src="{{bulk.preview}}" class="bulk-prew" alt=""/>
                         <p>{{bulk.name}}</p>
-                        <p>{{bulk.minprice}}</p>
+                        <strong>{{bulk.minprice | currency:"RU "}}</strong>
+                        <p><span>Свободно/Заброн.</span> <span>{{bulk.flat_free}}/{{bulk.flat_reserve}}</span></p>
+                        <p>Кол-во секций {{bulk.sections}}</p>
                     </div>
 
                </div>
