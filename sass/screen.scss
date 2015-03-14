@@ -260,6 +260,7 @@ header {
 //MAIN-CONTENT
 
 .realty-nav {
+  background: #F8F8F8;
   font-size: 0;
   li {
     display: inline-block;
@@ -317,7 +318,11 @@ header {
   min-height: 80px;
   background: #f1f3f7;
 }
-
+.bulk-prew {
+  max-width: 100px;
+  max-height: 80px;
+  float: left;
+}
 .right-col {
   @include box-sizing(border-box);
 //  height: 250px;

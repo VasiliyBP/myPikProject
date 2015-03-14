@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bulklistApp">
 <head>
     <meta charset="utf-8">
     <title>newppik</title>
@@ -111,7 +111,7 @@
                 <li><a href="#">Контакты</a></li>
             </ul>
         </div>
-        <div class="realty-content">
+        <div class="realty-content" ng-controller="bulkListCtrl">
             <div class="left-col">
                 <div class="object-address">
                     <h1>Район «Левобережный», ул. Совхозная</h1>
@@ -119,25 +119,13 @@
                     <h2>Московская область, Химки</h2>
                 </div>
 
-               <div class="realty-items-wrap">
-                    <div class="realty-item">
-
+               <div class="realty-items-list">
+                    <div class="realty-item" ng-repeat="bulk in bulks" ng-show="{{bulk.minprice > 0}}">
+                        <img ng-src="{{bulk.preview}}" class="bulk-prew" alt=""/>
+                        <p>{{bulk.name}}</p>
+                        <p>{{bulk.minprice}}</p>
                     </div>
-                   <div class="realty-item">
 
-                   </div>
-                   <div class="realty-item">
-
-                   </div>
-                   <div class="realty-item">
-
-                   </div>
-                   <div class="realty-item">
-
-                   </div>
-                   <div class="realty-item">
-
-                   </div>
                </div>
 
             </div>
@@ -229,7 +217,9 @@
         </div>
     </footer>
 </div>
-<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
-<script src="js/main.js" ></script>
+<script src="js/angular.min.js" type="text/javascript"></script>
+<script src="js/controller.js" type="text/javascript"></script>
+<!--<script src="js/jquery-1.11.1.js" type="text/javascript"></script>-->
+<!--<script src="js/main.js" type="text/javascript"></script>-->
 </body>
 </html>
