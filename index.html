@@ -120,9 +120,9 @@
                 </div>
 
                <div class="realty-items-list">
-                    <div class="realty-item" ng-repeat="bulk in bulks" ng-show="{{bulk.minprice > 0}}">
+                    <div class="realty-item" ng-repeat="bulk in bulks | filter: {type: '100000000'}" ng-if="bulk.minprice > 0" >
                         <img ng-src="{{bulk.preview}}" class="bulk-prew" alt=""/>
-                        <p>{{bulk.name}}</p>
+                        <a ng-href="http://www.pik.ru/realty/moskovskaya-oblast/g.-himki/raion-levoberezhnyi/{{bulk.bulk_id}}">{{bulk.name}}</a>
                         <strong>{{bulk.minprice | currency:"RU "}}</strong>
                         <p><span>Свободно/Заброн.</span> <span>{{bulk.flat_free}}/{{bulk.flat_reserve}}</span></p>
                         <p>Кол-во секций {{bulk.sections}}</p>
