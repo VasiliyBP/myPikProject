@@ -208,7 +208,7 @@ header {
 }
 .menu-item-realty-dropdown > a {
   padding-right: 31px !important;
-  background: url("../../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
+  background: url("../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
 }
 
 
@@ -239,7 +239,7 @@ header {
 }
 
 .b-breadcrumbs-dropdown-button {
-  background: url("../../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
+  background: url("../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
   border: 0 none !important;
   cursor: pointer;
   display: inline-block;
@@ -271,7 +271,9 @@ header {
     color:black;
     display: block;
     padding: 8px 10px;
-    background: #e0e4e8;
+//    background: #e0e4e8;
+    background: #f5f5f5;
+
     text-decoration: none;
 
     &:hover {
@@ -298,7 +300,7 @@ header {
   float: left;
 }
 .object-address {
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 0;
   h1 {
     display: inline-block;
     font-weight: bold;
@@ -309,7 +311,30 @@ header {
     font-size: 12px;
   }
 }
+.filter-wrapp {
+  margin-top: 10px;
+  font-size: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.realty-filter-btn {
+  font-size: 14px;
+  display: inline-block;
+  background: #F5F5F5;
+  padding: 8px 10px;
 
+  cursor: pointer;
+  &:hover {
+    background: #FA6A0E;
+    color: #ffffff;
+  }
+}
+.realty-filter-btn.active {
+  background: #FA6A0E;
+  color: #ffffff;
+}
 .realty-items-list {
   @include pie-clearfix;
 

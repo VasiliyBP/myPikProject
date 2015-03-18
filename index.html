@@ -118,9 +118,12 @@
                     <span>/</span>
                     <h2>Московская область, Химки</h2>
                 </div>
-
+               <div class="filter-wrapp" ng-init="realtyTypeFilter = {type: '100000000'}">
+                   <span class="realty-filter-btn" ng-class="{active: realtyTypeFilter.type == '100000000'}" ng-click="realtyTypeFilter = {type: '100000000'}">Квартиры</span>
+                   <span class="realty-filter-btn" ng-class="{active: realtyTypeFilter.type == '100000003'}" ng-click="realtyTypeFilter = {type: '100000003'}">Коммерческая недвижимость</span>
+               </div>
                <div class="realty-items-list">
-                    <div class="realty-item" ng-repeat="bulk in bulks | filter: {type: '100000000'} | filter: flatsWithPrice('minprice', 0)">
+                    <div class="realty-item" ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter: flatsWithPrice('minprice', 0)">
                         <div class="img-wrapp">
                             <img ng-src="{{bulk.preview}}" class="bulk-prew" alt="bulk-img"/>
                         </div>

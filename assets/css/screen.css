@@ -317,7 +317,7 @@ header:after {
 /* line 209, sass/screen.scss */
 .menu-item-realty-dropdown > a {
   padding-right: 31px !important;
-  background: url("../../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
+  background: url("../img/main-menu-dropdown-sprite.png") no-repeat scroll 155px 4px transparent !important;
 }
 
 /* line 219, sass/screen.scss */
@@ -348,7 +348,7 @@ header:after {
 
 /* line 241, sass/screen.scss */
 .b-breadcrumbs-dropdown-button {
-  background: url("../../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
+  background: url("../img/icon-dropdown.png") no-repeat scroll 0 center transparent;
   border: 0 none !important;
   cursor: pointer;
   display: inline-block;
@@ -381,21 +381,21 @@ header:after {
   color: black;
   display: block;
   padding: 8px 10px;
-  background: #e0e4e8;
+  background: #f5f5f5;
   text-decoration: none;
 }
-/* line 277, sass/screen.scss */
+/* line 279, sass/screen.scss */
 .realty-nav a:hover {
   background: #fa6a0f;
   color: #ffffff;
 }
-/* line 283, sass/screen.scss */
+/* line 285, sass/screen.scss */
 .realty-nav .realty-nav-btn-active {
   background: #FA6A0E;
   color: #ffffff;
 }
 
-/* line 288, sass/screen.scss */
+/* line 290, sass/screen.scss */
 .realty-content {
   *zoom: 1;
   border-top: 3px solid #FA6A0E;
@@ -407,7 +407,7 @@ header:after {
   clear: both;
 }
 
-/* line 293, sass/screen.scss */
+/* line 295, sass/screen.scss */
 .left-col {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -416,23 +416,53 @@ header:after {
   float: left;
 }
 
-/* line 300, sass/screen.scss */
-.object-address {
-  padding: 10px 0 0 10px;
-}
 /* line 302, sass/screen.scss */
+.object-address {
+  padding: 10px 0 0 0;
+}
+/* line 304, sass/screen.scss */
 .object-address h1 {
   display: inline-block;
   font-weight: bold;
   font-size: 16px;
 }
-/* line 307, sass/screen.scss */
+/* line 309, sass/screen.scss */
 .object-address h2 {
   display: inline-block;
   font-size: 12px;
 }
 
-/* line 313, sass/screen.scss */
+/* line 314, sass/screen.scss */
+.filter-wrapp {
+  margin-top: 10px;
+  font-size: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 322, sass/screen.scss */
+.realty-filter-btn {
+  font-size: 14px;
+  display: inline-block;
+  background: #F5F5F5;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+/* line 329, sass/screen.scss */
+.realty-filter-btn:hover {
+  background: #FA6A0E;
+  color: #ffffff;
+}
+
+/* line 334, sass/screen.scss */
+.realty-filter-btn.active {
+  background: #FA6A0E;
+  color: #ffffff;
+}
+
+/* line 338, sass/screen.scss */
 .realty-items-list {
   *zoom: 1;
 }
@@ -443,7 +473,7 @@ header:after {
   clear: both;
 }
 
-/* line 317, sass/screen.scss */
+/* line 342, sass/screen.scss */
 .realty-item {
   font-size: 12px;
   float: left;
@@ -452,12 +482,12 @@ header:after {
   min-height: 70px;
   background: #f1f3f7;
 }
-/* line 325, sass/screen.scss */
+/* line 350, sass/screen.scss */
 .realty-item p {
   line-height: 16px;
 }
 
-/* line 329, sass/screen.scss */
+/* line 354, sass/screen.scss */
 .img-wrapp {
   margin-right: 5px;
   max-width: 90px;
@@ -465,12 +495,12 @@ header:after {
   float: left;
   overflow: hidden;
 }
-/* line 335, sass/screen.scss */
+/* line 360, sass/screen.scss */
 .img-wrapp img {
   max-width: 100px;
 }
 
-/* line 339, sass/screen.scss */
+/* line 364, sass/screen.scss */
 .right-col {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -479,7 +509,7 @@ header:after {
   float: left;
 }
 
-/* line 357, sass/screen.scss */
+/* line 382, sass/screen.scss */
 .l-footer {
   *zoom: 1;
   color: #696969;
@@ -495,19 +525,19 @@ header:after {
   clear: both;
 }
 
-/* line 366, sass/screen.scss */
+/* line 391, sass/screen.scss */
 .l-footer-left {
   width: 735px;
   float: left;
 }
 
-/* line 372, sass/screen.scss */
+/* line 397, sass/screen.scss */
 .l-footer-right {
   float: right;
   width: 190px;
 }
 
-/* line 377, sass/screen.scss */
+/* line 402, sass/screen.scss */
 .b-footer-menu {
   position: relative;
   border-bottom: 1px solid #C3C3C3;
@@ -515,13 +545,13 @@ header:after {
   padding: 0 0 10px;
 }
 
-/* line 384, sass/screen.scss */
+/* line 409, sass/screen.scss */
 .b-footer-menu a {
   background: none repeat scroll 0 0 transparent;
   min-width: 0;
 }
 
-/* line 393, sass/screen.scss */
+/* line 418, sass/screen.scss */
 .b-footer-menu li {
   display: inline;
   font-size: 12px;
@@ -530,13 +560,13 @@ header:after {
   padding: 5px 10px 5px 0px;
 }
 
-/* line 402, sass/screen.scss */
+/* line 427, sass/screen.scss */
 .b-footer-menu a {
   color: #000000;
   text-decoration: none;
 }
 
-/* line 406, sass/screen.scss */
+/* line 431, sass/screen.scss */
 .f-info {
   *zoom: 1;
 }
@@ -547,38 +577,38 @@ header:after {
   clear: both;
 }
 
-/* line 410, sass/screen.scss */
+/* line 435, sass/screen.scss */
 .f-info ul {
   float: left;
   margin: 0 47px 0 0;
   list-style: none outside none;
 }
 
-/* line 415, sass/screen.scss */
+/* line 440, sass/screen.scss */
 .f-info ul li {
   margin: 0 0 5px !important;
   padding: 0px !important;
 }
 
-/* line 420, sass/screen.scss */
+/* line 445, sass/screen.scss */
 .f-info ul li a {
   color: #9FA0A0;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* line 427, sass/screen.scss */
+/* line 452, sass/screen.scss */
 .f-meta {
   margin-top: 20px;
 }
 
-/* line 431, sass/screen.scss */
+/* line 456, sass/screen.scss */
 .f-meta a {
   color: #696969;
   font-size: 10px;
 }
 
-/* line 436, sass/screen.scss */
+/* line 461, sass/screen.scss */
 .b-footer-contacts p {
   padding: 0px;
   margin: 0px;
@@ -586,12 +616,12 @@ header:after {
   font: 16px tahoma;
 }
 
-/* line 443, sass/screen.scss */
+/* line 468, sass/screen.scss */
 .b-footer-call {
   padding: 10px 0px;
 }
 
-/* line 446, sass/screen.scss */
+/* line 471, sass/screen.scss */
 .b-footer-call a {
   border-bottom: 1px dotted #E05900;
   color: #E05900;
@@ -599,13 +629,13 @@ header:after {
   text-decoration: none;
 }
 
-/* line 452, sass/screen.scss */
+/* line 477, sass/screen.scss */
 .b-footer-copyright {
   color: #000;
   font-size: 13px;
 }
 
-/* line 456, sass/screen.scss */
+/* line 481, sass/screen.scss */
 .b-footer-mobile-link {
   margin-top: 10px;
   display: block;
