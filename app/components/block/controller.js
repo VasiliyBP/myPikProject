@@ -1,7 +1,3 @@
-'use strict';
-
-/* Controllers */
-
 var bulklistApp = angular.module('bulklistApp', []);
 
 bulklistApp.controller('bulkListCtrl', function($scope, $http){
@@ -9,15 +5,21 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;
     });
+    // показывать цену больше чем
     $scope.flatsWithPrice = function(prop, val){
         return function(item){
             return item[prop] > val;
         }
     };
+
+    //фильтрация на тип недвиги
     $scope.realtyTypeFilter = {};
     $scope.setType = function(type) {
     	$scope.realtyTypeFilter.type = type
     };
-
+    //проверка на активный фильтр
+    $scope.isActive = function(type){
+        return $scope.realtyTypeFilter.type == type;
+    };
 });
 

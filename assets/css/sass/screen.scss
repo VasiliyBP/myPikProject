@@ -290,6 +290,9 @@ header {
 .realty-content {
   @include pie-clearfix;
   border-top: 3px solid #FA6A0E;
+  margin-top: -3px;
+  position: relative;
+  z-index: 2;
 
 }
 .left-col {
