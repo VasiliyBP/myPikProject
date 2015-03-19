@@ -14,5 +14,10 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
             return item[prop] > val;
         }
     };
+    $scope.realtyTypeFilter = {};
+    $scope.setType = function(type) {
+    	$scope.realtyTypeFilter.type = type
+    };
+
 });
 
