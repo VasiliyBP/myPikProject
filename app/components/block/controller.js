@@ -8,9 +8,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;
     // массив с ценами
-//        var minpriceFlatsArray = [];
-//        var minpriceCommercArray = [];
-//        var minpriceCarsArray = [];
         $scope.minimums = {
             minPriceFlats: null,
             minPriceFlats1: null,
@@ -23,42 +20,28 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
         }
 
         for (i = 0; i < $scope.bulks.length; i++) {
-            if($scope.minimums.minPriceFlats === null
-                && $scope.bulks[i].minprice != 0
-                || $scope.bulks[i].minprice != 0
-                && $scope.minimums.minPriceFlats > $scope.bulks[i].minprice) {
-
+            if($scope.minimums.minPriceFlats === null && $scope.bulks[i].minprice != 0
+                || $scope.bulks[i].minprice != 0 && $scope.minimums.minPriceFlats > $scope.bulks[i].minprice) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
             }
-            if($scope.minimums.minPriceFlats1 === null && $scope.bulks[i].minprice_1 != undefined || (($scope.bulks[i].minprice_1 != undefined) && ($scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1))) {
+            if($scope.minimums.minPriceFlats1 === null && $scope.bulks[i].minprice_1 != undefined
+                || $scope.bulks[i].minprice_1 != undefined && $scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1) {
                 $scope.minimums.minPriceFlats1 = $scope.bulks[i].minprice_1;
             }
-            if($scope.minimums.minPriceFlats2 === null && $scope.bulks[i].minprice_2 != undefined || (($scope.bulks[i].minprice_2 != undefined) && ($scope.minimums.minPriceFlats2 > $scope.bulks[i].minprice_2))) {
+            if($scope.minimums.minPriceFlats2 === null && $scope.bulks[i].minprice_2 != undefined
+                || $scope.bulks[i].minprice_2 != undefined && $scope.minimums.minPriceFlats2 > $scope.bulks[i].minprice_2) {
                 $scope.minimums.minPriceFlats2 = $scope.bulks[i].minprice_2;
             }
-            if($scope.minimums.minPriceFlats3 === null && $scope.bulks[i].minprice_3 != undefined || (($scope.bulks[i].minprice_3 != undefined) && ($scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_3))) {
+            if($scope.minimums.minPriceFlats3 === null && $scope.bulks[i].minprice_3 != undefined
+                || $scope.bulks[i].minprice_3 != undefined && $scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_3) {
                 $scope.minimums.minPriceFlats3 = $scope.bulks[i].minprice_3;
             }
-            if($scope.minimums.minPriceFlats4 === null && $scope.bulks[i].minprice_4 != undefined || (($scope.bulks[i].minprice_4 != undefined) && ($scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_4))) {
+            if($scope.minimums.minPriceFlats4 === null && $scope.bulks[i].minprice_4 != undefined
+                || $scope.bulks[i].minprice_4 != undefined && $scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_4) {
                 $scope.minimums.minPriceFlats4 = $scope.bulks[i].minprice_4;
             }
-
-//            if($scope.bulks[i].type == 100000003 && $scope.bulks[i].minprice > 0 ) {
-//                minpriceCommercArray.push($scope.bulks[i].minprice);
-//            }
-//            if($scope.bulks[i].type == 100000002 && $scope.bulks[i].minprice > 0 ) {
-//                minpriceCarsArray.push($scope.bulks[i].minprice);
-//            }
-
         }
         console.log($scope.minimums);
-
-
-//    // массив запись минимальной цены
-//       $scope.minprice = Math.min.apply(0,minpriceFlatsArray);
-//        console.log(minpriceCommercArray);
-//        console.log(minpriceCarsArray);
-
     });
 
     // показывать цену больше чем
