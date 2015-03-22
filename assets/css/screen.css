@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 10, sass/screen.scss */
 body {
   height: 100%;
-  color: #464646;
+  color: #515254;
   font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
   font-size: 14px;
 }
@@ -489,32 +489,41 @@ header:after {
 
 /* line 353, sass/screen.scss */
 .realty-item {
-  font-size: 12px;
+  font-size: 14px;
   float: left;
   width: 240px;
   margin: 10px 10px 0 0;
   min-height: 70px;
   background: #f1f3f7;
 }
-/* line 361, sass/screen.scss */
-.realty-item p {
-  font-size: 14px;
-}
 
-/* line 365, sass/screen.scss */
+/* line 362, sass/screen.scss */
 .img-wrapp {
-  margin-right: 5px;
+  margin-right: 10px;
   max-width: 90px;
   max-height: 70px;
   float: left;
   overflow: hidden;
 }
-/* line 371, sass/screen.scss */
+/* line 368, sass/screen.scss */
 .img-wrapp img {
   max-width: 100px;
 }
 
-/* line 375, sass/screen.scss */
+/* line 374, sass/screen.scss */
+.item-data {
+  float: left;
+}
+/* line 376, sass/screen.scss */
+.item-data a {
+  color: #1c5597;
+}
+/* line 379, sass/screen.scss */
+.item-data a:hover {
+  color: #FA680B;
+}
+
+/* line 384, sass/screen.scss */
 .right-col {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -525,13 +534,13 @@ header:after {
   padding: 0 0 10px 0;
 }
 
-/* line 382, sass/screen.scss */
+/* line 391, sass/screen.scss */
 .rc-prices {
   font-size: 14px;
   margin: 15px 10px 0 10px;
 }
 
-/* line 397, sass/screen.scss */
+/* line 406, sass/screen.scss */
 .l-footer {
   *zoom: 1;
   color: #696969;
@@ -547,19 +556,19 @@ header:after {
   clear: both;
 }
 
-/* line 406, sass/screen.scss */
+/* line 415, sass/screen.scss */
 .l-footer-left {
   width: 735px;
   float: left;
 }
 
-/* line 412, sass/screen.scss */
+/* line 421, sass/screen.scss */
 .l-footer-right {
   float: right;
   width: 190px;
 }
 
-/* line 417, sass/screen.scss */
+/* line 426, sass/screen.scss */
 .b-footer-menu {
   position: relative;
   border-bottom: 1px solid #C3C3C3;
@@ -567,13 +576,13 @@ header:after {
   padding: 0 0 10px;
 }
 
-/* line 424, sass/screen.scss */
+/* line 433, sass/screen.scss */
 .b-footer-menu a {
   background: none repeat scroll 0 0 transparent;
   min-width: 0;
 }
 
-/* line 433, sass/screen.scss */
+/* line 442, sass/screen.scss */
 .b-footer-menu li {
   display: inline;
   font-size: 12px;
@@ -582,13 +591,13 @@ header:after {
   padding: 5px 10px 5px 0px;
 }
 
-/* line 442, sass/screen.scss */
+/* line 451, sass/screen.scss */
 .b-footer-menu a {
   color: #000000;
   text-decoration: none;
 }
 
-/* line 446, sass/screen.scss */
+/* line 455, sass/screen.scss */
 .f-info {
   *zoom: 1;
 }
@@ -599,38 +608,38 @@ header:after {
   clear: both;
 }
 
-/* line 450, sass/screen.scss */
+/* line 459, sass/screen.scss */
 .f-info ul {
   float: left;
   margin: 0 47px 0 0;
   list-style: none outside none;
 }
 
-/* line 455, sass/screen.scss */
+/* line 464, sass/screen.scss */
 .f-info ul li {
   margin: 0 0 5px !important;
   padding: 0px !important;
 }
 
-/* line 460, sass/screen.scss */
+/* line 469, sass/screen.scss */
 .f-info ul li a {
   color: #9FA0A0;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* line 467, sass/screen.scss */
+/* line 476, sass/screen.scss */
 .f-meta {
   margin-top: 20px;
 }
 
-/* line 471, sass/screen.scss */
+/* line 480, sass/screen.scss */
 .f-meta a {
   color: #696969;
   font-size: 10px;
 }
 
-/* line 476, sass/screen.scss */
+/* line 485, sass/screen.scss */
 .b-footer-contacts p {
   padding: 0px;
   margin: 0px;
@@ -638,12 +647,12 @@ header:after {
   font: 16px tahoma;
 }
 
-/* line 483, sass/screen.scss */
+/* line 492, sass/screen.scss */
 .b-footer-call {
   padding: 10px 0px;
 }
 
-/* line 486, sass/screen.scss */
+/* line 495, sass/screen.scss */
 .b-footer-call a {
   border-bottom: 1px dotted #E05900;
   color: #E05900;
@@ -651,13 +660,13 @@ header:after {
   text-decoration: none;
 }
 
-/* line 492, sass/screen.scss */
+/* line 501, sass/screen.scss */
 .b-footer-copyright {
   color: #000;
   font-size: 13px;
 }
 
-/* line 496, sass/screen.scss */
+/* line 505, sass/screen.scss */
 .b-footer-mobile-link {
   margin-top: 10px;
   display: block;

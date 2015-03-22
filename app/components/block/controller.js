@@ -25,20 +25,20 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
                 || $scope.bulks[i].minprice != 0 && $scope.minimums.minPriceFlats > $scope.bulks[i].minprice)) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
             }
-            if(!$scope.minimums.minPriceFlats1 && $scope.bulks[i].minprice_1 != undefined
-                || $scope.bulks[i].minprice_1 != undefined && $scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1) {
+            if($scope.bulks[i].minprice_1 && (!$scope.minimums.minPriceFlats1
+                || $scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1)) {
                 $scope.minimums.minPriceFlats1 = $scope.bulks[i].minprice_1;
             }
-            if(!$scope.minimums.minPriceFlats2 && $scope.bulks[i].minprice_2 != undefined
-                || $scope.bulks[i].minprice_2 != undefined && $scope.minimums.minPriceFlats2 > $scope.bulks[i].minprice_2) {
+            if($scope.bulks[i].minprice_2 && (!$scope.minimums.minPriceFlats2
+                || $scope.minimums.minPriceFlats2 > $scope.bulks[i].minprice_2)) {
                 $scope.minimums.minPriceFlats2 = $scope.bulks[i].minprice_2;
             }
-            if(!$scope.minimums.minPriceFlats3 && $scope.bulks[i].minprice_3 != undefined
-                || $scope.bulks[i].minprice_3 != undefined && $scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_3) {
+            if($scope.bulks[i].minprice_3 && (!$scope.minimums.minPriceFlats3
+                || $scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_3)) {
                 $scope.minimums.minPriceFlats3 = $scope.bulks[i].minprice_3;
             }
-            if(!$scope.minimums.minPriceFlats4 && $scope.bulks[i].minprice_4 != undefined
-                || $scope.bulks[i].minprice_4 != undefined && $scope.minimums.minPriceFlats3 > $scope.bulks[i].minprice_4) {
+            if($scope.bulks[i].minprice_4 && (!$scope.minimums.minPriceFlats4
+                || $scope.minimums.minPriceFlats4 > $scope.bulks[i].minprice_4)) {
                 $scope.minimums.minPriceFlats4 = $scope.bulks[i].minprice_4;
             }
             if($scope.bulks[i].type == 100000003 && (!$scope.minimums.minPriceCommercial && $scope.bulks[i].minprice != 0
@@ -69,9 +69,5 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };
-
-});
-
-bulklistApp.controller('minpriceCtrl', function($scope){
 
 });
