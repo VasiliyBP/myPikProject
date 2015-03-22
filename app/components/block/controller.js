@@ -18,7 +18,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
             minPriceFlatsSP: null,
             minPriceCommercial: null,
             minPriceCars: null
-        }
+        };
 
         for (i = 0; i < $scope.bulks.length; i++) {
             if($scope.bulks[i].type == 100000000 && $scope.minimums.minPriceFlats === null && $scope.bulks[i].minprice != 0

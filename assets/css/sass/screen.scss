@@ -9,10 +9,16 @@
 
 body {
   height: 100%;
-
+  color: #464646;
   font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
   font-size: 14px;
 
+}
+b, strong {
+  font-weight: 700;
+}
+p {
+  margin: 0.4em 0;
 }
 img {
   max-width: 100%;
@@ -353,7 +359,7 @@ header {
   min-height: 70px;
   background: #f1f3f7;
   p {
-    line-height: 16px;
+    font-size: 14px;
   }
 }
 .img-wrapp {
@@ -368,12 +374,16 @@ header {
 }
 .right-col {
   @include box-sizing(border-box);
-//  height: 250px;
-//  background: blue;
   width: 250px;
   float: left;
+  background: #f1f3f7;
+  padding: 0 0 10px 0;
 }
+.rc-prices {
+  font-size: 14px;
+  margin: 15px 10px 0 10px;
 
+}
 
 
 //MAIN-CONTENT-end
