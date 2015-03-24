@@ -132,11 +132,15 @@
                             <p>
                                 <a ng-href="http://www.pik.ru/realty/moskovskaya-oblast/g.-himki/raion-levoberezhnyi/{{bulk.bulk_id}}">{{bulk.name}}</a>
                             </p>
-                            <p><strong>{{bulk.minprice}}</strong> руб.</p>
-                            <p>
-                                <span>Своб./Заброн.:</span>
-                                <span>{{bulk.flat_free}}/{{bulk.flat_reserve}}</span>
-                            </p>
+                            <p><strong>от {{bulk.minprice}} руб.</strong></p>
+                                <div>
+                                    <img ng-src="{{bulk.interiorIco}}" alt="Отделка" title="{{bulk.interiorTxt}}"/>
+                                    <img ng-src="{{bulk.ipotekaIco}}" alt="Ипотека" title="{{bulk.ipotekaTxt}}"/>
+                                    <img ng-src="{{bulk.discountIco}}" alt="Акции" title="{{bulk.discountTxt}}"/>
+                                    <img ng-src="{{bulk.paymentIco}}" alt="Рассрочка" title="{{bulk.paymentTxt}}"/>
+                                    <img ng-src="{{bulk.building_statusIco}}" alt="Статус строительства" title="{{bulk.building_statusTxt}}"/>
+                                    <img ng-src="{{bulk.ParkingIco}}" alt="Парковка" title="{{bulk.ParkingTxt}}"/>
+                                </div>
                             <p><!--Кол-во секций: {{bulk.sections}}--></p>
                         </div>
                     </div>

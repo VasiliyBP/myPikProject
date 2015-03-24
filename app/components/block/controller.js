@@ -21,7 +21,14 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
             minPriceCars: null
         };
 
+
         for (i = 0; i < $scope.bulks.length; i++) {
+
+            //Заглушка, пока у венделева сломались картинки
+            $scope.bulks[i].preview = 'http://2.db-estate.cdn.pik-service.ru/attachment_pikru/0/972FC13E-DC93-E311-8208-001EC9D56418/kope_parus_006_800x600_15aae06b60d7d6da6ac1c2c7940_be3fe44d6f5179f3caba5cee47b4fe57_0x200.jpg';
+
+            //Выборка минимальных цен в новый объект
+
             if($scope.bulks[i].type == 100000000 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceFlats
                 || $scope.minimums.minPriceFlats > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
@@ -51,9 +58,69 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
                 $scope.minimums.minPriceCars = $scope.bulks[i].minprice;
             }
 
+            //быдлорешение вывода иконок. Позже создать директиву для этого
+
+
+            if (!$scope.bulks[i].interior) {
+                $scope.bulks[i].interiorIco = 'http://www.pik.ru/images/realty/icons/decore_off.png';
+                $scope.bulks[i].interiorTxt = 'Нет отделки';
+            } else {
+                $scope.bulks[i].interiorIco = 'http://www.pik.ru/images/realty/icons/decore_on.png';
+                $scope.bulks[i].interiorTxt = 'Есть отделка';
+            }
+
+            if (!$scope.bulks[i].ipoteka) {
+                $scope.bulks[i].ipotekaIco = 'http://www.pik.ru/images/realty/icons/hypotec_off.png';
+                $scope.bulks[i].ipotekaTxt = 'Нет ипотеки';
+
+            } else {
+                $scope.bulks[i].ipotekaIco = 'http://www.pik.ru/images/realty/icons/hypotec_on.png';
+                $scope.bulks[i].ipotekaTxt = 'Есть ипотека';
+            }
+
+            if (!$scope.bulks[i].discount) {
+                $scope.bulks[i].discountIco = 'http://www.pik.ru/images/realty/icons/action_off.png';
+                $scope.bulks[i].discountTxt = 'Нет акции';
+            } else {
+                $scope.bulks[i].discountIco = 'http://www.pik.ru/images/realty/icons/action_on.png';
+                $scope.bulks[i].discountTxt = 'Есть акция';
+            }
+
+            if (!$scope.bulks[i].payment) {
+                $scope.bulks[i].paymentIco = 'http://www.pik.ru/images/realty/icons/clock_off.png';
+                $scope.bulks[i].paymentTxt = 'Нет рассрочки';
+            } else {
+                $scope.bulks[i].paymentIco = 'http://www.pik.ru/images/realty/icons/clock_on.png';
+                $scope.bulks[i].paymentTxt = 'Есть рассрочка';
+            }
+
+            if ($scope.bulks[i].building_status == 100000000) {
+                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
+                $scope.bulks[i].building_statusTxt = 'Не идет строительство';
+
+            } else if ($scope.bulks[i].building_status == 100000001) {
+                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
+                $scope.bulks[i].building_statusTxt = 'Идет строительство';
+
+            } else if ($scope.bulks[i].building_status == 100000002) {
+                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
+                $scope.bulks[i].building_statusTxt = 'Заселение';
+
+            } else {
+                $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
+                $scope.bulks[i].building_statusTxt = 'Дом построен';
+            }
+
+            if (!$scope.bulks[i].parking) {
+                $scope.bulks[i].ParkingIco = 'http://www.pik.ru/images/realty/icons/cars_off.png';
+                $scope.bulks[i].ParkingTxt = 'Нет машиномест';
+            } else {
+                $scope.bulks[i].ParkingIco = 'http://www.pik.ru/images/realty/icons/cars_on.png';
+                $scope.bulks[i].ParkingTxt = 'Есть машиноместа';
+            }
+
         }
 
-        console.log($scope.minimums);
     });
 
     // показывать цену больше чем
@@ -71,8 +138,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };
-
-   
 
 
 
