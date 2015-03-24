@@ -94,22 +94,43 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
                 $scope.bulks[i].paymentTxt = 'Есть рассрочка';
             }
 
-            if ($scope.bulks[i].building_status == 100000000) {
-                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
-                $scope.bulks[i].building_statusTxt = 'Не идет строительство';
 
-            } else if ($scope.bulks[i].building_status == 100000001) {
-                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
-                $scope.bulks[i].building_statusTxt = 'Идет строительство';
-
-            } else if ($scope.bulks[i].building_status == 100000002) {
-                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
-                $scope.bulks[i].building_statusTxt = 'Заселение';
-
-            } else {
-                $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
-                $scope.bulks[i].building_statusTxt = 'Дом построен';
+            switch ($scope.bulks[i].building_status) {
+                case '100000000':
+                    $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
+                    $scope.bulks[i].building_statusTxt = 'Не идет строительство';
+                    break
+                case '100000001':
+                    $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
+                    $scope.bulks[i].building_statusTxt = 'Идет строительство';
+                    break
+                case '100000002':
+                    $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
+                    $scope.bulks[i].building_statusTxt = 'Заселение';
+                    break
+                case '100000003':
+                    $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
+                    $scope.bulks[i].building_statusTxt = 'Дом построен';
+                    break
             }
+
+
+//            if ($scope.bulks[i].building_status == 100000000) {
+//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
+//                $scope.bulks[i].building_statusTxt = 'Не идет строительство';
+//
+//            } else if ($scope.bulks[i].building_status == 100000001) {
+//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
+//                $scope.bulks[i].building_statusTxt = 'Идет строительство';
+//
+//            } else if ($scope.bulks[i].building_status == 100000002) {
+//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
+//                $scope.bulks[i].building_statusTxt = 'Заселение';
+//
+//            } else {
+//                $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
+//                $scope.bulks[i].building_statusTxt = 'Дом построен';
+//            }
 
             if (!$scope.bulks[i].parking) {
                 $scope.bulks[i].ParkingIco = 'http://www.pik.ru/images/realty/icons/cars_off.png';
