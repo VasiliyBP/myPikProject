@@ -7,7 +7,8 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     // запрос списка
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;
-    // массив с ценами
+
+    //объект с ценами
 
         $scope.minimums = {
             minPriceFlats: null,
@@ -21,8 +22,8 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
         };
 
         for (i = 0; i < $scope.bulks.length; i++) {
-            if($scope.bulks[i].type == 100000000 && (!$scope.minimums.minPriceFlats && $scope.bulks[i].minprice != 0
-                || $scope.bulks[i].minprice != 0 && $scope.minimums.minPriceFlats > $scope.bulks[i].minprice)) {
+            if($scope.bulks[i].type == 100000000 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceFlats
+                || $scope.minimums.minPriceFlats > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
             }
             if($scope.bulks[i].minprice_1 && (!$scope.minimums.minPriceFlats1
@@ -41,16 +42,17 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
                 || $scope.minimums.minPriceFlats4 > $scope.bulks[i].minprice_4)) {
                 $scope.minimums.minPriceFlats4 = $scope.bulks[i].minprice_4;
             }
-            if($scope.bulks[i].type == 100000003 && (!$scope.minimums.minPriceCommercial && $scope.bulks[i].minprice != 0
-                || $scope.bulks[i].minprice != 0 && $scope.minimums.minPriceCommercial > $scope.bulks[i].minprice)) {
+            if($scope.bulks[i].type == 100000003 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceCommercial
+                || $scope.minimums.minPriceCommercial > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceCommercial = $scope.bulks[i].minprice;
             }
-            if($scope.bulks[i].type == 100000004 && (!$scope.minimums.minPriceCars && $scope.bulks[i].minprice != 0
-                || $scope.bulks[i].minprice != 0 && $scope.minimums.minPriceCars > $scope.bulks[i].minprice)) {
+            if($scope.bulks[i].type == 100000004 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceCars
+                || $scope.minimums.minPriceCars > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceCars = $scope.bulks[i].minprice;
             }
 
         }
+
         console.log($scope.minimums);
     });
 
@@ -69,5 +71,9 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };
+
+   
+
+
 
 });

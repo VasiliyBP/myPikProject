@@ -127,49 +127,52 @@
                         <div class="img-wrapp">
                             <img ng-src="{{bulk.preview}}" class="bulk-prew" alt="bulk-img"/>
                         </div>
+
                         <div class="item-data">
                             <p>
                                 <a ng-href="http://www.pik.ru/realty/moskovskaya-oblast/g.-himki/raion-levoberezhnyi/{{bulk.bulk_id}}">{{bulk.name}}</a>
                             </p>
-
-                            <p><strong>{{bulk.minprice | currency}}</strong></p>
+                            <p><strong>{{bulk.minprice}}</strong> руб.</p>
                             <p>
                                 <span>Своб./Заброн.:</span>
                                 <span>{{bulk.flat_free}}/{{bulk.flat_reserve}}</span>
                             </p>
                             <p><!--Кол-во секций: {{bulk.sections}}--></p>
                         </div>
-
-
                     </div>
 
                </div>
-
+                <div class="block-text">
+                    <div class="desription">
+                        Описание района
+                    </div>
+                </div>
             </div>
+
             <div class="right-col">
                 <img src="assets/img/prew.jpg" alt="prew"/>
                 <div class="rc-prices">
                     <b>Квартиры:</b>
                     <p>
-                        <span>от </span><b>{{minimums.minPriceFlats | currency}}</b>
+                        <span>Цена от </span><b>{{minimums.minPriceFlats }} руб.</b>
                     </p>
                     <p>
-                       <span>1-ком.: от {{minimums.minPriceFlats1 | currency}}</span>
+                       <span>1-ком.: от {{minimums.minPriceFlats1 }} руб.</span>
                     </p>
                     <p>
-                        <span>2-ком.: от {{minimums.minPriceFlats2 | currency}}</span>
+                        <span>2-ком.: от {{minimums.minPriceFlats2 }} руб.</span>
                     </p>
                     <p>
-                        <span>3-ком.: от {{minimums.minPriceFlats3 | currency}}</span>
+                        <span>3-ком.: от {{minimums.minPriceFlats3 }} руб.</span>
                     </p>
                     <p>
-                        <span>4-ком.: от {{minimums.minPriceFlats4 | currency}}</span>
+                        <span>4-ком.: от {{minimums.minPriceFlats4 }} руб.</span>
                     </p>
                 </div>
                 <div class="rc-prices">
                     <b>Коммерческая недвижимость:</b>
                     <p>
-                        <span>от </span><b>{{minimums.minPriceCommercial | currency}}</b>
+                        <span>от </span><b>{{minimums.minPriceCommercial}} руб.</b>
                     </p>
                 </div>
                 <div class="rc-prices">

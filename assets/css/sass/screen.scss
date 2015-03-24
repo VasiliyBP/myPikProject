@@ -16,6 +16,8 @@ body {
 }
 b, strong {
   font-weight: 700;
+  font-size: 14px;
+
 }
 p {
   margin: 0.4em 0;
@@ -268,9 +270,10 @@ header {
 //MAIN-CONTENT
 
 .realty-nav {
-  background: #F8F8F8;
+  background: #f5f5f5;
   font-size: 0;
   li {
+
     display: inline-block;
     font-size: 14px;
 //    font-weight: bold;
@@ -370,17 +373,26 @@ header {
     }
   }
 
-
   .item-data {
     @include float-left;
+    p {
+      text-overflow: ellipsis ;
+      width: 140px;
+    }
     a {
-//      font-weight: bold;
+      width: 140px;
+      text-overflow: ellipsis ;
+      white-space: nowrap;
       color: #1c5597;
       &:hover {
         color: #FA680B;
       }
     }
   }
+
+.block-text {
+  margin-top: 10px;
+}
 .right-col {
   @include box-sizing(border-box);
   width: 250px;
@@ -414,13 +426,13 @@ header {
 
 .l-footer-left {
 
-  width: 735px;
+  width: 730px;
   float: left;
 }
 
 .l-footer-right {
   float: right;
-  width: 190px;
+  width: 230px;
 }
 
 .b-footer-menu {
