@@ -22,7 +22,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
         };
 
 
-        for (i = 0; i < $scope.bulks.length; i++) {
+        for (var i = 0, len = $scope.bulks.length; i < len; i++) {
 
             //Заглушка, пока у венделева сломались картинки
             $scope.bulks[i].preview = 'http://2.db-estate.cdn.pik-service.ru/attachment_pikru/0/972FC13E-DC93-E311-8208-001EC9D56418/kope_parus_006_800x600_15aae06b60d7d6da6ac1c2c7940_be3fe44d6f5179f3caba5cee47b4fe57_0x200.jpg';
