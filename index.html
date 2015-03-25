@@ -103,7 +103,7 @@
 
         <div class="realty-nav-wrapp">
             <ul class="realty-nav">
-                <li><a class="realty-nav-btn-active" href="#">Выбрать квартиру</a></li>
+                <li><a class="realty-nav-btn-active" href="#">Корпуса</a></li>
                 <li><a href="#">Генплан</a></li>
                 <li><a href="#">Новости</a></li>
                 <li><a href="#">Галерея</a></li>
@@ -114,7 +114,7 @@
         <div class="realty-content" ng-controller="bulkListCtrl">
             <div class="left-col">
                 <div class="object-address">
-                    <h1>Район «Левобережный», ул. Совхозная</h1>
+                    <h1>{{block.name}}</h1>
                     <span>/</span>
                     <h2>Московская область, Химки</h2>
                 </div>
@@ -123,7 +123,7 @@
                    <span class="realty-filter-btn" ng-class="{active: isActive(100000003)}" ng-click="setType(100000003)">Коммерческая недвижимость</span>
                </div>
                <div class="realty-items-list">
-                    <div class="realty-item" ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter:flatsWithPrice('minprice', 0)">
+                    <div class="realty-item"  ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter:flatsWithPrice('minprice', 0)" ng-animate="'animate'">
                         <div class="img-wrapp">
                             <img ng-src="{{bulk.preview}}" class="bulk-prew" alt="bulk-img"/>
                         </div>
@@ -148,8 +148,8 @@
                </div>
                 <div class="block-text">
                     <div class="desription" >
-                        Как добраться:
-                        <p>{{bulks[0].transport}}</p>
+
+                        <div ng-bind-html="renderHtml(block.description)"></div>
                     </div>
                 </div>
             </div>

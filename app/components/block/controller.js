@@ -1,12 +1,38 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
-bulklistApp.controller('bulkListCtrl', function($scope, $http){
-    $scope.bulks = [];
-    var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=eabaeb9-9df2-2e6c-8476-c0ededf8503a&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 
-    // запрос списка
+bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
+
+    $scope.bulks = [];
+    $scope.block = {};
+    $scope.offices = [];
+
+
+    var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
+
+    var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
+    var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
+    var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
+
+    //вывод HTML
+    $scope.renderHtml = function (htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
+    };
+    // запрос оффисов
+    $http.get(getOfficeLink).success(function(data) {
+        $scope.offices = data;
+
+    });
+    // запрос Района
+    $http.get(getBlockLink ).success(function(data) {
+        $scope.block = data;
+
+    });
+
+    // запрос списка Корпусов
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;
+
 
     //объект с ценами
 
@@ -113,24 +139,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http){
                     $scope.bulks[i].building_statusTxt = 'Дом построен';
                     break
             }
-
-
-//            if ($scope.bulks[i].building_status == 100000000) {
-//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
-//                $scope.bulks[i].building_statusTxt = 'Не идет строительство';
-//
-//            } else if ($scope.bulks[i].building_status == 100000001) {
-//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
-//                $scope.bulks[i].building_statusTxt = 'Идет строительство';
-//
-//            } else if ($scope.bulks[i].building_status == 100000002) {
-//                $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
-//                $scope.bulks[i].building_statusTxt = 'Заселение';
-//
-//            } else {
-//                $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
-//                $scope.bulks[i].building_statusTxt = 'Дом построен';
-//            }
 
             if (!$scope.bulks[i].parking) {
                 $scope.bulks[i].ParkingIco = 'http://www.pik.ru/images/realty/icons/cars_off.png';

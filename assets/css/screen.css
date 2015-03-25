@@ -392,7 +392,7 @@ header:after {
 .realty-nav a {
   color: black;
   display: block;
-  padding: 8px 10px;
+  padding: 8px 14px;
   background: #f5f5f5;
   text-decoration: none;
 }
@@ -685,4 +685,32 @@ header:after {
   margin-top: 10px;
   display: block;
   font-size: 13px;
+}
+
+/* line 524, sass/screen.scss */
+.animate-enter,
+.animate-leave {
+  -webkit-transition: 400ms cubic-bezier(0.25, 0.1, 0.25, 1) all;
+  -moz-transition: 400ms cubic-bezier(0.25, 0.1, 0.25, 1) all;
+  -ms-transition: 400ms cubic-bezier(0.25, 0.1, 0.25, 1) all;
+  -o-transition: 400ms cubic-bezier(0.25, 0.1, 0.25, 1) all;
+  transition: 400ms cubic-bezier(0.25, 0.1, 0.25, 1) all;
+  position: relative;
+  display: block;
+}
+
+/* line 536, sass/screen.scss */
+.animate-enter.animate-enter-active,
+.animate-leave {
+  opacity: 1;
+  right: 0;
+  height: 30px;
+}
+
+/* line 543, sass/screen.scss */
+.animate-leave.animate-leave-active,
+.animate-enter {
+  opacity: 0;
+  right: -50px;
+  height: 0px;
 }
