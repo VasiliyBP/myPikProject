@@ -1,5 +1,12 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
+var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
+
+var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
+var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
+var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
+
+
 
 bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
 
@@ -7,28 +14,15 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.block = {};
     $scope.offices = [];
 
-
-    var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
-
-    var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
-    var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
-    var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
-
     //вывод HTML
     $scope.renderHtml = function (htmlCode) {
         return $sce.trustAsHtml(htmlCode);
     };
     // запрос оффисов
-    $http.get(getOfficeLink).success(function(data) {
-        $scope.offices = data;
+//    $http.get(getOfficeLink).success(function(data) {$scope.offices = data;});
 
-    });
-    // запрос Района
-    $http.get(getBlockLink ).success(function(data) {
-        $scope.block = data;
-
-    });
-
+   // запрос Района
+    $http.get(getBlockLink ).success(function(data) {$scope.block = data;});
     // запрос списка Корпусов
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;
@@ -47,11 +41,15 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             minPriceCars: null
         };
 
+        $scope.blockOffices = [];
 
         for (var i = 0, len = $scope.bulks.length; i < len; i++) {
 
-            //Заглушка, пока у венделева сломались картинки
+            //Заглушка, пока у Артема сломались картинки
             $scope.bulks[i].preview = 'http://2.db-estate.cdn.pik-service.ru/attachment_pikru/0/972FC13E-DC93-E311-8208-001EC9D56418/kope_parus_006_800x600_15aae06b60d7d6da6ac1c2c7940_be3fe44d6f5179f3caba5cee47b4fe57_0x200.jpg';
+
+            $scope.blockOffices.push($scope.bulks[i].office);
+
 
             //Выборка минимальных цен в новый объект
 
@@ -149,6 +147,26 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             }
 
         }
+
+        //определяем уникальные офисы
+        var unicOffice = function(arr) {
+
+            var i = arr.length;
+
+            arr.sort();
+
+            while (i--) {
+                if (arr[i] == arr[i-1]) {
+                    arr.splice(i, 1);
+                }
+                if (!arr[i]) arr.splice(i, 1);
+            }
+            arr.filter(function(e){return e});
+            console.log(arr);
+        };
+
+        unicOffice($scope.blockOffices);
+
 
     });
 
