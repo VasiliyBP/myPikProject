@@ -407,6 +407,18 @@ header {
 }
 
 
+
+.slide-block-content {
+  display: none;
+}
+
+.slide-block-btn {
+  cursor: pointer;
+  background: #EFF3F5;
+  padding: 5px;
+  margin:10px 10px 0 0;
+  font: bold 14px Arial,Helvetica,sans-serif;
+}
 //MAIN-CONTENT-end
 
 
@@ -521,28 +533,3 @@ header {
 }
 
 //FOOTER END
-.animate-enter,
-.animate-leave
-{
-  -webkit-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
-  -moz-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
-  -ms-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
-  -o-transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
-  transition: 400ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
-  position: relative;
-  display: block;
-}
-
-.animate-enter.animate-enter-active,
-.animate-leave {
-  opacity: 1;
-  right: 0;
-  height: 30px;
-}
-
-.animate-leave.animate-leave-active,
-.animate-enter {
-  opacity: 0;
-  right: -50px;
-  height: 0px;
-}

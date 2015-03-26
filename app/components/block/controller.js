@@ -14,10 +14,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.block = {};
     $scope.offices = [];
 
-    //вывод HTML
-    $scope.renderHtml = function (htmlCode) {
-        return $sce.trustAsHtml(htmlCode);
-    };
     // запрос оффисов
 //    $http.get(getOfficeLink).success(function(data) {$scope.offices = data;});
 
@@ -40,7 +36,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             minPriceCommercial: null,
             minPriceCars: null
         };
-
+     // массив с уникальными ценами
         $scope.blockOffices = [];
 
         for (var i = 0, len = $scope.bulks.length; i < len; i++) {
@@ -161,7 +157,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
                 }
                 if (!arr[i]) arr.splice(i, 1);
             }
-            arr.filter(function(e){return e});
+
             console.log(arr);
         };
 
@@ -185,7 +181,10 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };
-
+    //вывод HTML
+    $scope.renderHtml = function (htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
+    };
 
 
 });
