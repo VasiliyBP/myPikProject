@@ -44,6 +44,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             //Заглушка, пока у Артема сломались картинки
             $scope.bulks[i].preview = 'http://2.db-estate.cdn.pik-service.ru/attachment_pikru/0/972FC13E-DC93-E311-8208-001EC9D56418/kope_parus_006_800x600_15aae06b60d7d6da6ac1c2c7940_be3fe44d6f5179f3caba5cee47b4fe57_0x200.jpg';
 
+            //наполняем массив офисами
             $scope.blockOffices.push($scope.bulks[i].office);
 
 

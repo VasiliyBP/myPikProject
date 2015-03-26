@@ -121,6 +121,7 @@
                <div class="filter-wrapp" ng-init="setType(100000000)">
                    <span class="realty-filter-btn" ng-class="{active: isActive(100000000)}" ng-click="setType(100000000)">Квартиры</span>
                    <span class="realty-filter-btn" ng-class="{active: isActive(100000003)}" ng-click="setType(100000003)">Коммерческая недвижимость</span>
+                   <span class="realty-filter-btn" ng-class="{active: isActive(100000004)}" ng-click="setType(100000004)">Машиноместа</span>
                </div>
                <div class="realty-items-list">
                     <div class="realty-item"  ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter:flatsWithPrice('minprice', 0)" ng-animate="'animate'">
@@ -149,7 +150,8 @@
                 <div class="block-actions">
                     <h2 class="slide-block-btn">Акции</h2>
                     <div class="slide-block-content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae commodi cum dolore eveniet maxime perspiciatis quibusdam quidem totam ut? Amet exercitationem facere molestias sequi sunt! Autem blanditiis enim error, eum exercitationem facere, id illo mollitia nesciunt perferendis quaerat repellendus!
+                       <div class="realty-item"></div>
+                        <div class="realty-item"></div>
                     </div>
                 </div>
                 <div class="block-text">

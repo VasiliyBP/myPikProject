@@ -406,15 +406,18 @@ header {
 
 }
 
-
+.block-actions .slide-block-content {
+  display: block;
+}
 
 .slide-block-content {
+  @include pie-clearfix;
   display: none;
 }
 
 .slide-block-btn {
   cursor: pointer;
-  background: #EFF3F5;
+  background: #F5F5F5;
   padding: 5px;
   margin:10px 10px 0 0;
   font: bold 14px Arial,Helvetica,sans-serif;
