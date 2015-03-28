@@ -3,6 +3,8 @@ var bulklistApp = angular.module('bulklistApp', []);
 var realtyObject = '02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0';
 //02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0
 //eabaeb9-9df2-2e6c-8476-c0ededf8503a
+//7ba415d-2a2d-b8b2-c523-bdb408b8c414
+//6a9eaaf-12c0-21da-a643-8ceb3d10fc39
 var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
@@ -60,14 +62,16 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             if($scope.bulks[i].type == 100000003 && $scope.bulks[i].minprice != 0) $scope.realtyType.commercial = true;
             if($scope.bulks[i].type == 100000004 && $scope.bulks[i].minprice != 0) $scope.realtyType.cars = true;
 
+            if($scope.bulks[i].sale_status == 100000003 && $scope.bulks[i].minprice == 0) $scope.bulks[i].minprice = 'В планах';
+
             //Выборка минимальных цен в новый объект
 
             if($scope.bulks[i].type == 100000000 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceFlats
                 || $scope.minimums.minPriceFlats > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
             }
-            if($scope.bulks[i].minprice_1 && (!$scope.minimums.minPriceFlats1
-                || $scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1)) {
+            if($scope.bulks[i].type == 100000000 && ($scope.bulks[i].minprice_1 && (!$scope.minimums.minPriceFlats1
+                || $scope.minimums.minPriceFlats1 > $scope.bulks[i].minprice_1))) {
                 $scope.minimums.minPriceFlats1 = $scope.bulks[i].minprice_1;
             }
             if($scope.bulks[i].minprice_2 && (!$scope.minimums.minPriceFlats2

@@ -125,6 +125,7 @@
                </div>
                <div class="realty-items-list">
                     <div class="realty-item"  ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter: filterSaleStatus">
+                        <!--filter: flatsWithPrice('minprice', 0)-->
                         <div class="img-wrapp">
                             <img ng-src="{{bulk.preview}}" class="bulk-prew" alt="bulk-img"/>
                         </div>
@@ -142,18 +143,18 @@
                                     <img ng-src="{{bulk.building_statusIco}}" alt="Статус строительства" title="{{bulk.building_statusTxt}}"/>
                                     <img ng-src="{{bulk.ParkingIco}}" alt="Парковка" title="{{bulk.ParkingTxt}}"/>
                                 </div>
-                            <p><!--Кол-во секций: {{bulk.sections}}--></p>
+
                         </div>
                     </div>
 
                </div>
-                <div class="block-actions">
-                    <h2 class="slide-block-btn">Акции</h2>
-                    <div class="slide-block-content">
-                       <div class="realty-item"></div>
-                        <div class="realty-item"></div>
-                    </div>
-                </div>
+                <!--<div class="block-actions">-->
+                    <!--<h2 class="slide-block-btn">Акции</h2>-->
+                    <!--<div class="slide-block-content">-->
+                       <!--<div class="realty-item"></div>-->
+                        <!--<div class="realty-item"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="block-text">
                     <h2 class="slide-block-btn">Описание</h2>
                     <div class="slide-block-content">
@@ -165,7 +166,7 @@
 
             <div class="right-col">
                 <img src="assets/img/prew.jpg" alt="prew"/>
-                <div class="rc-prices">
+                <div class="rc-prices" ng-if="minimums.minPriceFlats">
                     <b>Квартиры:</b>
                     <p>
                         <span>Цена от </span><b>{{minimums.minPriceFlats }} руб.</b>
@@ -183,10 +184,16 @@
                         <span>4-ком.: от {{minimums.minPriceFlats4 }} руб.</span>
                     </p>
                 </div>
-                <div class="rc-prices">
+                <div class="rc-prices" ng-if="minimums.minPriceCommercial">
                     <b>Коммерческая недвижимость:</b>
                     <p>
                         <span>Цена от </span><b>{{minimums.minPriceCommercial}} руб.</b>
+                    </p>
+                </div>
+                <div class="rc-prices" ng-if="minimums.minPriceCars">
+                    <b>Машиноместа:</b>
+                    <p>
+                        <span>Цена от </span><b>{{minimums.minPriceCar}} руб.</b>
                     </p>
                 </div>
                 <div class="rc-prices">

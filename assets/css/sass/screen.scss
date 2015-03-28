@@ -376,7 +376,9 @@ header {
   .item-data {
     @include float-left;
     p {
+      overflow: hidden;
       text-overflow: ellipsis ;
+      white-space: nowrap;
       width: 140px;
     }
     a {
@@ -392,6 +394,7 @@ header {
 
 .block-text {
   margin-top: 10px;
+  margin-right: 10px;
 }
 .right-col {
   @include box-sizing(border-box);
@@ -412,14 +415,14 @@ header {
 
 .slide-block-content {
   @include pie-clearfix;
-  display: none;
+
 }
 
 .slide-block-btn {
   cursor: pointer;
   background: #F5F5F5;
   padding: 5px;
-  margin:10px 10px 0 0;
+  margin:10px 0 0 0;
   font: bold 14px Arial,Helvetica,sans-serif;
 }
 //MAIN-CONTENT-end
