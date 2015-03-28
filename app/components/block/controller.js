@@ -184,15 +184,23 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             return item[prop] > val;
         }
     };
+
     //фильтрация на тип недвиги
     $scope.realtyTypeFilter = {};
     $scope.setType = function(type) {
-    	$scope.realtyTypeFilter.type = type
+    	$scope.realtyTypeFilter.type = type;
     };
+
     //проверка на активный фильтр
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };
+
+    //показывать только в реализации и в планах
+    $scope.filterSaleStatus = function(bulk) {
+         return (bulk.sale_status == 100000001 || bulk.sale_status == 100000003);
+    };
+
     //вывод HTML
     $scope.renderHtml = function (htmlCode) {
         return $sce.trustAsHtml(htmlCode);
