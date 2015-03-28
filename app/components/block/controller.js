@@ -1,7 +1,8 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
-var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
-
+var realtyObject = '02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0';
+//02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0
+//eabaeb9-9df2-2e6c-8476-c0ededf8503a
 var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
@@ -15,8 +16,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.offices = [];
 
     // запрос оффисов
-//    $http.get(getOfficeLink).success(function(data) {$scope.offices = data;});
-
+    $http.get(getOfficeLink).success(function(data) {$scope.offices = data;});
    // запрос Района
     $http.get(getBlockLink ).success(function(data) {$scope.block = data;});
     // запрос списка Корпусов
@@ -36,6 +36,14 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             minPriceCommercial: null,
             minPriceCars: null
         };
+    //объект для проверки на наличие определенного типа недвижимости для ng-if
+        $scope.realtyType = {
+            flats: null,
+            commercial: null,
+            cottages:null,
+            cars: null
+        };
+
      // массив с уникальными ценами
         $scope.blockOffices = [];
 
@@ -47,6 +55,10 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             //наполняем массив офисами
             $scope.blockOffices.push($scope.bulks[i].office);
 
+            // объект для проверки на наличие определенного типа недвижимости для ng-if
+            if($scope.bulks[i].type == 100000000 && $scope.bulks[i].minprice != 0) $scope.realtyType.flats = true;
+            if($scope.bulks[i].type == 100000003 && $scope.bulks[i].minprice != 0) $scope.realtyType.commercial = true;
+            if($scope.bulks[i].type == 100000004 && $scope.bulks[i].minprice != 0) $scope.realtyType.cars = true;
 
             //Выборка минимальных цен в новый объект
 
@@ -80,7 +92,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             }
 
             //быдлорешение вывода иконок. Позже создать директиву для этого
-
 
             if (!$scope.bulks[i].interior) {
                 $scope.bulks[i].interiorIco = 'http://www.pik.ru/images/realty/icons/decore_off.png';
@@ -120,19 +131,19 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
                 case '100000000':
                     $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
                     $scope.bulks[i].building_statusTxt = 'Не идет строительство';
-                    break
+                    break;
                 case '100000001':
                     $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/underConstruction.png';
                     $scope.bulks[i].building_statusTxt = 'Идет строительство';
-                    break
+                    break;
                 case '100000002':
                     $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/occupy.png';
                     $scope.bulks[i].building_statusTxt = 'Заселение';
-                    break
+                    break;
                 case '100000003':
                     $scope.bulks[i].building_statusIco = 'http://www.pik.ru/images/realty/icons/built.png';
                     $scope.bulks[i].building_statusTxt = 'Дом построен';
-                    break
+                    break;
             }
 
             if (!$scope.bulks[i].parking) {
