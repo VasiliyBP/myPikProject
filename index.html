@@ -124,7 +124,7 @@
                    <span class="realty-filter-btn" ng-class="{active: isActive(100000004)}" ng-click="setType(100000004)" ng-if="realtyType.cars">Машиноместа</span>
                </div>
                <div class="realty-items-list">
-                    <div class="realty-item"  ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter: filterSaleStatus">
+                    <div class="realty-item"  ng-repeat="bulk in bulks | filter:realtyTypeFilter | filter: filterSaleStatus | orderBy:'-sort_inner'">
                         <!--filter: flatsWithPrice('minprice', 0)-->
                         <div class="img-wrapp">
                             <img ng-src="{{bulk.preview}}" class="bulk-prew" alt="bulk-img"/>
@@ -134,7 +134,7 @@
                             <p>
                                 <a ng-href="http://www.pik.ru/realty/moskovskaya-oblast/g.-himki/raion-levoberezhnyi/{{bulk.bulk_id}}">{{bulk.name}}</a>
                             </p>
-                            <p><strong>от {{bulk.minprice}} руб.</strong></p>
+                            <p><strong>{{printCost(bulk)}}</strong></p>
                                 <div>
                                     <img ng-src="{{bulk.interiorIco}}" alt="Отделка" title="{{bulk.interiorTxt}}"/>
                                     <img ng-src="{{bulk.ipotekaIco}}" alt="Ипотека" title="{{bulk.ipotekaTxt}}"/>
@@ -193,7 +193,7 @@
                 <div class="rc-prices" ng-if="minimums.minPriceCars">
                     <b>Машиноместа:</b>
                     <p>
-                        <span>Цена от </span><b>{{minimums.minPriceCar}} руб.</b>
+                        <span>Цена от </span><b>{{minimums.minPriceCars}} руб.</b>
                     </p>
                 </div>
                 <div class="rc-prices">

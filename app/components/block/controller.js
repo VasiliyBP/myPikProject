@@ -1,10 +1,11 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
-var realtyObject = '02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0';
+var realtyObject = 'c13e8bd-54c3-131e-0fe4-55156056f664';
 //02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0
 //eabaeb9-9df2-2e6c-8476-c0ededf8503a
 //7ba415d-2a2d-b8b2-c523-bdb408b8c414
 //6a9eaaf-12c0-21da-a643-8ceb3d10fc39
+//c13e8bd-54c3-131e-0fe4-55156056f664
 var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
@@ -61,8 +62,9 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             if($scope.bulks[i].type == 100000000 && $scope.bulks[i].minprice != 0) $scope.realtyType.flats = true;
             if($scope.bulks[i].type == 100000003 && $scope.bulks[i].minprice != 0) $scope.realtyType.commercial = true;
             if($scope.bulks[i].type == 100000004 && $scope.bulks[i].minprice != 0) $scope.realtyType.cars = true;
-
-            if($scope.bulks[i].sale_status == 100000003 && $scope.bulks[i].minprice == 0) $scope.bulks[i].minprice = 'В планах';
+            // кастомная сортировка
+            if($scope.bulks[i].minprice == 0) $scope.bulks[i].sort_inner = -100000;
+            if($scope.bulks[i].sale_status == 100000003) $scope.bulks[i].sort_inner = -100000000;
 
             //Выборка минимальных цен в новый объект
 
@@ -209,6 +211,15 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.renderHtml = function (htmlCode) {
         return $sce.trustAsHtml(htmlCode);
     };
+    //цена
+    $scope.printCost = function(bulk){
+        if (bulk.sale_status == 100000003) return "В планах";
+        if (bulk.minprice == 0) {
+            return "Нет в наличии";
+        } else {
+            return "от " + bulk.minprice + ' руб.';
+        }
 
+    };
 
 });
