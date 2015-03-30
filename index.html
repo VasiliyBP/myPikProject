@@ -172,16 +172,16 @@
                         <span>Цена от </span><b>{{minimums.minPriceFlats }} руб.</b>
                     </p>
                     <p>
-                       <span>1-ком.: от {{minimums.minPriceFlats1 }} руб.</span>
+                       <span ng-if="minimums.minPriceFlats1">1-ком.: от {{minimums.minPriceFlats1 }} руб.</span>
                     </p>
                     <p>
-                        <span>2-ком.: от {{minimums.minPriceFlats2 }} руб.</span>
+                        <span ng-if="minimums.minPriceFlats2">2-ком.: от {{minimums.minPriceFlats2 }} руб.</span>
                     </p>
                     <p>
-                        <span>3-ком.: от {{minimums.minPriceFlats3 }} руб.</span>
+                        <span ng-if="minimums.minPriceFlats3">3-ком.: от {{minimums.minPriceFlats3 }} руб.</span>
                     </p>
                     <p>
-                        <span>4-ком.: от {{minimums.minPriceFlats4 }} руб.</span>
+                        <span ng-if="minimums.minPriceFlats4">4-ком.: от {{minimums.minPriceFlats4 }} руб.</span>
                     </p>
                 </div>
                 <div class="rc-prices" ng-if="minimums.minPriceCommercial">
