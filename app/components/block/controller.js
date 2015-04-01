@@ -1,16 +1,14 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
-var realtyObject = '6a9eaaf-12c0-21da-a643-8ceb3d10fc39';
-//02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0
-//eabaeb9-9df2-2e6c-8476-c0ededf8503a
-//7ba415d-2a2d-b8b2-c523-bdb408b8c414
-//6a9eaaf-12c0-21da-a643-8ceb3d10fc39
-//c13e8bd-54c3-131e-0fe4-55156056f664
+var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
+//02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0 новокуркино
+//eabaeb9-9df2-2e6c-8476-c0ededf8503a левобережный
+//7ba415d-2a2d-b8b2-c523-bdb408b8c414 бунинский
+//6a9eaaf-12c0-21da-a643-8ceb3d10fc39 красная горка
+//c13e8bd-54c3-131e-0fe4-55156056f664 ярославский
 var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
-
-
 
 bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
 
@@ -18,8 +16,16 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     $scope.block = {};
     $scope.offices = [];
 
-    // запрос оффисов
-    $http.get(getOfficeLink).success(function(data) {$scope.offices = data;});
+    // запрос офисов
+    $http.get(getOfficeLink).success(function(data) {
+        $scope.offices = data;
+
+        //заглушка для картинки офисов
+        for (var i in $scope.offices) {
+            $scope.offices[i]['photo'] = 'http://offices.cdn.pik-service.ru/attachment/0/49/lbg_7c628ae5ff307fdb621d53bd24479009.jpg';
+        }
+    });
+
    // запрос Района
     $http.get(getBlockLink ).success(function(data) {$scope.block = data;});
     // запрос списка Корпусов
@@ -46,33 +52,27 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
             cars: null
         };
 
-     // массив с уникальными ценами
-       //$scope.blockOffices = [];
-        $scope.unicOffices = [];
+       // объект с уникальными офисами
+         $scope.unicOffices = {};
 
-//        function isFlats() {
-//            return $scope.bulks[i].type == 100000000;
-//        }
         for (var i = 0, len = $scope.bulks.length; i < len; i++) {
 
             //Заглушка, пока у Артема сломались картинки
             $scope.bulks[i].preview = 'http://2.db-estate.cdn.pik-service.ru/attachment_pikru/0/972FC13E-DC93-E311-8208-001EC9D56418/kope_parus_006_800x600_15aae06b60d7d6da6ac1c2c7940_be3fe44d6f5179f3caba5cee47b4fe57_0x200.jpg';
 
-            //наполняем массив офисами
-            // $scope.blockOffices.push($scope.bulks[i].office);
+            //наполняем объект с уникальными офисами
+            if ($scope.bulks[i].office) $scope.unicOffices[$scope.bulks[i].office] = $scope.offices[$scope.bulks[i].office];
 
-
-
-            // объект для проверки на наличие определенного типа недвижимости для ng-if
+            // объект для проверки на наличие определенного типа недвижимости в кнопках для ng-if
             if($scope.bulks[i].type == 100000000 && $scope.bulks[i].minprice != 0) $scope.realtyType.flats = true;
             if($scope.bulks[i].type == 100000003 && $scope.bulks[i].minprice != 0) $scope.realtyType.commercial = true;
             if($scope.bulks[i].type == 100000004 && $scope.bulks[i].minprice != 0) $scope.realtyType.cars = true;
+
             // кастомная сортировка
             if($scope.bulks[i].minprice == 0) $scope.bulks[i].sort_inner = -100000;
             if($scope.bulks[i].sale_status == 100000003) $scope.bulks[i].sort_inner = -100000000;
 
             //Выборка минимальных цен в новый объект
-
             if($scope.bulks[i].type == 100000000 && ($scope.bulks[i].minprice != 0 && (!$scope.minimums.minPriceFlats
                 || $scope.minimums.minPriceFlats > $scope.bulks[i].minprice))) {
                 $scope.minimums.minPriceFlats = $scope.bulks[i].minprice;
@@ -139,7 +139,6 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
                 $scope.bulks[i].paymentTxt = 'Есть рассрочка';
             }
 
-
             switch ($scope.bulks[i].building_status) {
                 case '100000000':
                     $scope.bulks[i].building_statusIco = 'http://yaroslavl.pik.ru/images/realty/icons/plan.png';
@@ -166,30 +165,8 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
                 $scope.bulks[i].ParkingIco = 'http://www.pik.ru/images/realty/icons/cars_on.png';
                 $scope.bulks[i].ParkingTxt = 'Есть машиноместа';
             }
-
         }
-        console.log($scope.OfficesM);
-
-//        //определяем уникальные офисы
-//        var unicOffice = function(arr) {
-//
-//            var i = arr.length;
-//
-//            arr.sort();
-//
-//            while (i--) {
-//                if (arr[i] == arr[i-1]) {
-//                    arr.splice(i, 1);
-//                }
-//                if (!arr[i]) arr.splice(i, 1);
-//            }
-//
-//            console.log(arr);
-//        };
-//
-//        unicOffice($scope.blockOffices);
-
-
+        console.log($scope.unicOffices);
     });
 
     // показывать цену больше чем
@@ -205,7 +182,7 @@ bulklistApp.controller('bulkListCtrl', function($scope, $http, $sce){
     	$scope.realtyTypeFilter.type = type;
     };
 
-    //проверка на активный фильтр
+    //проверка на активный фильтр типа недвиги
     $scope.isActive = function(type){
         return $scope.realtyTypeFilter.type == type;
     };

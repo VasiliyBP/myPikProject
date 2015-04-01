@@ -557,12 +557,19 @@ header:after {
   margin: 15px 10px 0 10px;
 }
 
-/* line 412, sass/screen.scss */
+/* line 411, sass/screen.scss */
+.office-img {
+  width: 250px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* line 417, sass/screen.scss */
 .block-actions .slide-block-content {
   display: block;
 }
 
-/* line 416, sass/screen.scss */
+/* line 421, sass/screen.scss */
 .slide-block-content {
   *zoom: 1;
 }
@@ -573,16 +580,16 @@ header:after {
   clear: both;
 }
 
-/* line 421, sass/screen.scss */
+/* line 426, sass/screen.scss */
 .slide-block-btn {
   cursor: pointer;
   background: #F5F5F5;
   padding: 5px;
-  margin: 10px 0x 0 0;
+  margin: 10px 0 0 0;
   font: bold 14px Arial,Helvetica,sans-serif;
 }
 
-/* line 436, sass/screen.scss */
+/* line 441, sass/screen.scss */
 .l-footer {
   *zoom: 1;
   color: #696969;
@@ -598,19 +605,19 @@ header:after {
   clear: both;
 }
 
-/* line 445, sass/screen.scss */
+/* line 450, sass/screen.scss */
 .l-footer-left {
   width: 730px;
   float: left;
 }
 
-/* line 451, sass/screen.scss */
+/* line 456, sass/screen.scss */
 .l-footer-right {
   float: right;
   width: 230px;
 }
 
-/* line 456, sass/screen.scss */
+/* line 461, sass/screen.scss */
 .b-footer-menu {
   position: relative;
   border-bottom: 1px solid #C3C3C3;
@@ -618,13 +625,13 @@ header:after {
   padding: 0 0 10px;
 }
 
-/* line 463, sass/screen.scss */
+/* line 468, sass/screen.scss */
 .b-footer-menu a {
   background: none repeat scroll 0 0 transparent;
   min-width: 0;
 }
 
-/* line 472, sass/screen.scss */
+/* line 477, sass/screen.scss */
 .b-footer-menu li {
   display: inline;
   font-size: 12px;
@@ -633,13 +640,13 @@ header:after {
   padding: 5px 10px 5px 0px;
 }
 
-/* line 481, sass/screen.scss */
+/* line 486, sass/screen.scss */
 .b-footer-menu a {
   color: #000000;
   text-decoration: none;
 }
 
-/* line 485, sass/screen.scss */
+/* line 490, sass/screen.scss */
 .f-info {
   *zoom: 1;
 }
@@ -650,38 +657,38 @@ header:after {
   clear: both;
 }
 
-/* line 489, sass/screen.scss */
+/* line 494, sass/screen.scss */
 .f-info ul {
   float: left;
   margin: 0 47px 0 0;
   list-style: none outside none;
 }
 
-/* line 494, sass/screen.scss */
+/* line 499, sass/screen.scss */
 .f-info ul li {
   margin: 0 0 5px !important;
   padding: 0px !important;
 }
 
-/* line 499, sass/screen.scss */
+/* line 504, sass/screen.scss */
 .f-info ul li a {
   color: #9FA0A0;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* line 506, sass/screen.scss */
+/* line 511, sass/screen.scss */
 .f-meta {
   margin-top: 20px;
 }
 
-/* line 510, sass/screen.scss */
+/* line 515, sass/screen.scss */
 .f-meta a {
   color: #696969;
   font-size: 10px;
 }
 
-/* line 515, sass/screen.scss */
+/* line 520, sass/screen.scss */
 .b-footer-contacts p {
   padding: 0px;
   margin: 0px;
@@ -689,12 +696,12 @@ header:after {
   font: 16px tahoma;
 }
 
-/* line 522, sass/screen.scss */
+/* line 527, sass/screen.scss */
 .b-footer-call {
   padding: 10px 0px;
 }
 
-/* line 525, sass/screen.scss */
+/* line 530, sass/screen.scss */
 .b-footer-call a {
   border-bottom: 1px dotted #E05900;
   color: #E05900;
@@ -702,13 +709,13 @@ header:after {
   text-decoration: none;
 }
 
-/* line 531, sass/screen.scss */
+/* line 536, sass/screen.scss */
 .b-footer-copyright {
   color: #000;
   font-size: 13px;
 }
 
-/* line 535, sass/screen.scss */
+/* line 540, sass/screen.scss */
 .b-footer-mobile-link {
   margin-top: 10px;
   display: block;

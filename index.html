@@ -196,14 +196,21 @@
                         <span>Цена от </span><b>{{minimums.minPriceCars}} руб.</b>
                     </p>
                 </div>
-                <div class="rc-prices">
-                    <b>Контакты:</b>
-                    <p>8 (495) 500-00-20 </p>
-                    <p>8 (495) 500-00-20 </p>
-                    <p>Пн.- Вс. с 9:00 до 21:00</p>
-                    <p><a href="#">Схема проезда</a></p>
-                    <p><a href="#">Яндекс.карты</a></p>
-                    <p><a href="#">Фото офиса</a></p>
+
+                <div ng-repeat="office in unicOffices" ng-if="unicOffices">
+                    <img class="office-img" ng-src="{{office.photo}}" alt=""/></p>
+                    <div class="rc-prices">
+                        <p><b>{{office.title}}</b></p>
+                        <b>Телефоны:</b>
+                        <p ng-bind-html="renderHtml(office.phones)"></p>
+                        <b>Режим работы:</b>
+                        <p>Пн.- Вс. с 9:00 до 21:00</p>
+                        <b>Информация:</b>
+                        <p ng-bind-html="renderHtml(office.realty_content)"></p>
+                        <p><a href="#">Схема проезда</a></p>
+                        <p><a href="#">Яндекс.карты</a></p>
+                        <p><a href="#">Фото офиса</a></p>
+                    </div>
                 </div>
             </div>
         </div>
