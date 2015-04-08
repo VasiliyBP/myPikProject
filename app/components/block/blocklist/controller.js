@@ -1,11 +1,13 @@
 var bulklistApp = angular.module('bulklistApp', []);
 
-var realtyObject = 'eabaeb9-9df2-2e6c-8476-c0ededf8503a';
+var realtyObject = '02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0';
 //02c34f4-cbbf-5d7c-92ee-79b38c0c0fe0 новокуркино
 //eabaeb9-9df2-2e6c-8476-c0ededf8503a левобережный
 //7ba415d-2a2d-b8b2-c523-bdb408b8c414 бунинский
 //6a9eaaf-12c0-21da-a643-8ceb3d10fc39 красная горка
 //c13e8bd-54c3-131e-0fe4-55156056f664 ярославский
+//c3c82ff-bb40-72f3-2a94-e5c8386233c2
+//e2cc96c-5028-b4ac-efc8-4df14dbb9449 centr2
 var getBulksLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBulkList&block_id=' + realtyObject + '&site=pikru&private_key=uXd3YY4!lptkarvQG8roywJW&format=json&domain=localhost%3A63342';
 var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
