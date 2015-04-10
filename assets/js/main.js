@@ -5,6 +5,11 @@ $(document).ready(function(){
             $(this).parent().find('.arrow-nav').toggleClass('active');
         });
 
+    $(document).on('click','.realty-nav-btn',function(){
+        $('.realty-nav-btn').removeClass('active');
+        $(this).addClass('active');
+    });
+
 
 });
 

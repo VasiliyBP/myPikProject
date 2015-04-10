@@ -382,13 +382,14 @@ header:after {
 .realty-nav {
   background: #f5f5f5;
   font-size: 0;
+  border-bottom: 3px solid #FA6A0E;
 }
-/* line 275, sass/screen.scss */
+/* line 276, sass/screen.scss */
 .realty-nav li {
   display: inline-block;
   font-size: 14px;
 }
-/* line 281, sass/screen.scss */
+/* line 282, sass/screen.scss */
 .realty-nav a {
   color: black;
   display: block;
@@ -396,22 +397,20 @@ header:after {
   background: #f5f5f5;
   text-decoration: none;
 }
-/* line 290, sass/screen.scss */
+/* line 291, sass/screen.scss */
 .realty-nav a:hover {
   background: #fa6a0f;
   color: #ffffff;
 }
-/* line 296, sass/screen.scss */
-.realty-nav .realty-nav-btn-active {
+/* line 298, sass/screen.scss */
+.realty-nav .realty-nav-btn.active {
   background: #FA6A0E;
   color: #ffffff;
 }
 
-/* line 301, sass/screen.scss */
+/* line 303, sass/screen.scss */
 .realty-content {
   *zoom: 1;
-  border-top: 3px solid #FA6A0E;
-  margin-top: -3px;
   position: relative;
   z-index: 2;
 }

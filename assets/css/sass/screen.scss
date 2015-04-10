@@ -272,6 +272,7 @@ header {
 .realty-nav {
   background: #f5f5f5;
   font-size: 0;
+  border-bottom: 3px solid #FA6A0E;
   li {
 
     display: inline-block;
@@ -293,15 +294,14 @@ header {
     }
   }
 
-  .realty-nav-btn-active {
+
+  .realty-nav-btn.active {
     background: #FA6A0E;
     color: #ffffff;
   }
 }
 .realty-content {
   @include pie-clearfix;
-  border-top: 3px solid #FA6A0E;
-  margin-top: -3px;
   position: relative;
   z-index: 2;
 
