@@ -16,22 +16,25 @@ bulklistControllers.controller('bulkListCtrl',['$scope', '$http', '$sce',
     var getOfficeLink = 'http://offices.services.dev.vendelevas.dev3.pikweb.net/api/offices/index?locations=all&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
     var getBlockLink = 'http://db-estate.services.dev.vendelevas.dev3.pikweb.net/api/objects/?method=getBlock&block_id='+ realtyObject +'&domain=localhost%3A63342&private_key=uXd3YY4!lptkarvQG8roywJW&format=json';
 
-    $scope.bulks = [];
-    $scope.block = {};
-    $scope.offices = [];
+    $scope.bulks = null;
+    $scope.block = null;
+    $scope.offices = null;
 
     // запрос офисов
-    $http.get(getOfficeLink).success(function(data) {
-        $scope.offices = data;
+    if (!$scope.offices) {
+        $http.get(getOfficeLink).success(function(data) {
+            $scope.offices = data;
 
-        //заглушка для картинки офисов
-        for (var i in $scope.offices) {
-            $scope.offices[i]['photo'] = 'http://offices.cdn.pik-service.ru/attachment/0/49/lbg_7c628ae5ff307fdb621d53bd24479009.jpg';
-        }
-    });
+            //заглушка для картинки офисов
+            for (var i in $scope.offices) {
+                $scope.offices[i]['photo'] = 'http://offices.cdn.pik-service.ru/attachment/0/49/lbg_7c628ae5ff307fdb621d53bd24479009.jpg';
+            }
+        });
+    }
 
-   // запрос Района
-    $http.get(getBlockLink ).success(function(data) {$scope.block = data;});
+    // запрос Района
+    if (!$scope.block) $http.get(getBlockLink).success(function(data) {$scope.block = data});
+
     // запрос списка Корпусов
     $http.get(getBulksLink).success(function(data) {
         $scope.bulks = data;

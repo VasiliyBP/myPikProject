@@ -6,6 +6,8 @@
 var bulklistApp = angular.module('bulklistApp', [
     'ngRoute',
     'bulklistControllers'
+
+
 ]);
 
 
@@ -24,22 +26,22 @@ bulklistApp.config(['$routeProvider',
             }).
             when('/news', {
                 templateUrl: 'app/components/block/news/news.html',
-                controller: 'bulkListCtrl',
+                controller: 'newslist',
                 activetab: 'news'
             }).
             when('/gallery', {
                 templateUrl: 'app/components/block/gallery/gallery.html',
-                controller: 'bulkListCtrl',
+
                 activetab: 'gallery'
             }).
             when('/docs', {
                 templateUrl: 'app/components/block/docs/docs.html',
-                controller: 'bulkListCtrl',
+
                 activetab: 'docs'
             }).
             when('/inner-contacts', {
                 templateUrl: 'app/components/block/inner-contacts/inner-contacts.html',
-                controller: 'bulkListCtrl',
+
                 activetab: 'inner-contacts'
             }).
             otherwise({
