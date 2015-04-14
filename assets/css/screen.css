@@ -720,3 +720,14 @@ header:after {
   display: block;
   font-size: 13px;
 }
+
+/* line 548, sass/screen.scss */
+.block-map {
+  width: 1000px;
+  margin-top: 10px;
+}
+
+/* line 554, sass/screen.scss */
+.frame-map > iframe {
+  width: 1000px;
+}

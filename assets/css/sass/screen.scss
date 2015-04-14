@@ -543,4 +543,16 @@ header {
   font-size: 13px;
 }
 
+
+
+.block-map {
+  width: 1000px;
+  margin-top: 10px;
+}
+
+.frame-map {
+  >iframe {
+    width: 1000px;
+  }
+}
 //FOOTER END

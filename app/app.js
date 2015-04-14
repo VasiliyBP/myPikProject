@@ -21,7 +21,7 @@ bulklistApp.config(['$routeProvider',
             }).
             when('/map', {
                 templateUrl: 'app/components/block/map/map.html',
-                controller: 'bulkListCtrl',
+                controller: 'maplist',
                 activetab: 'map'
             }).
             when('/news', {

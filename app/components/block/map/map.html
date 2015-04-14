@@ -1,1 +1,8 @@
-<h1>КАРТА</h1>
+<div class="object-address">
+    <h1>{{block.name}}</h1>
+    <span>/</span>
+    <h2>Московская область, Химки</h2>
+</div>
+
+<img class="block-map" ng-src="{{block.mapurl}}" alt=""/>
+<div class="frame-map"ng-bind-html="renderHtml(block.map)"></div>
